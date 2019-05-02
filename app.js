@@ -30,27 +30,45 @@ _calculateResult(){
             }
         }
     }
-
     const number= resultantString.length;
+    
+    console.log("the number of letters in the name array : "+number);
+    
     
     // CREATE THE D-QUEUE TO MINIMIZE FLAMES ARRAY TO SINGLE LETTER 
     
     let cur=0;    // global variable to locate the current position of the pointer of the flames array
+    let pass=0;
     
-    while(flames.length>1){
+    while(flames.length>=2){
+        console.log(`${flames} has ${flames.length} elements`);
+        console.log(`current should range from ${cur} to ${flames.length-1}`);
+        
         for(let i=0; i<number; i++){
-            if(cur>flames.length){
+            console.log(cur);
+            cur++;
+            if(cur>flames.length-1){
                 cur=0;
             }
-            cur++;
+            else if(cur==flames.length){
+                flames.splice(cur,1);
+                cur=0;
+                pass++;
+                continue;
+            }          
+            else{
+                cur=number-1;
+            }  
         }
+        console.log("---------------");
+        
+        console.log(`Element removed in  ${++pass} is ${flames[--cur]}. The cur value is ${cur}`);
         flames.splice(cur,1);
-
     }
-
+    
     console.log(flames);
 
-    this._showOutput(number);
+    // this._showOutput(number);
     this._onReset();
 }
 
