@@ -12,7 +12,10 @@ S= Sex
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-Progress :
+Progress : basic app layout completed//
+
+
+left : local storage incorporation for high scores and stuff
 
 
 
