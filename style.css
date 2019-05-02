@@ -77,7 +77,16 @@ header h1{
 #btn span:active{
     outline: none;
 }
-
+@media (max-width:768px){
+    #btn{
+        display:block;
+        padding:1rem;
+    }
+    #btn span{
+        float:right;
+        border: 1px dashed rgb(90, 9, 29);
+    }
+}
 #about{
     position: absolute;
     top: 0;
@@ -120,13 +129,25 @@ header h1{
 #about a:hover{
     transform: translateY(-1px);
     box-shadow: 0 0 3.5rem rgba(0,0,0,.5);
-
+    
 }
 
 #about a:focus{
     transform: scale(.99);
     box-shadow: 0 0 2rem rgba(0,0,0,.8);
 }
+
+@media (max-width:768px){
+.paragraph{
+        font-size:1.5rem;
+        padding: 1.75rem;
+    }
+ #about a{
+     font-size: 1.75rem;
+     padding: .75rem 2.75rem;
+ }
+}
+
 
 main{
     width: 70%;
@@ -148,12 +169,25 @@ main{
     align-items: center;
 }
 
+@media (max-width:700px){
+    main{
+        margin-top: 5rem;
+        width: 100%;
+        border-radius: 0%;
+    }
+    #form{
+        margin-top: -3rem;
+        padding: 2rem 0;
+        width: 100%;
+    }
+}
 .box{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 
 .box input{
     flex-basis: 75%;
@@ -163,6 +197,30 @@ main{
     border: none;
     background:bisque;
     color:rgb(90, 9, 29);
+}
+
+@media (max-width:768px){
+    .box{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width:100%;
+    }
+    .box input{
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    .btn-box{
+        display: block;
+        padding-bottom: 2rem;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:700px){
+    .box{
+        margin: 5rem 0;
+    }
 }
 
 .box input::placeholder{
@@ -212,7 +270,9 @@ main{
 }
 
 .score{
+    padding: 2rem;
     font:inherti;
+    font-size: 2rem;
     color:bisque;
     text-align: center;
     text-transform: uppercase;
