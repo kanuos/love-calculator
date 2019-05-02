@@ -4,14 +4,17 @@ _getNames(){
     const firstName= document.getElementById('first').value;
     const secondName= document.getElementById('second').value;
 
-    const regExp= /[a-z]{3,12}/gi; 
+    const regExp= /[a-zA-Z]{3,12}/; 
     
-    // if(regExp.test(firstName) && regExp.test(secondName)){
+    if(regExp.test(firstName) && regExp.test(secondName)){
         this.firstName=firstName;
         this.secondName=secondName;
         this._calculateResult();
-        // this._showOutput();
-    // }
+    }
+    else{
+        alert("Invalid Option");
+        this._onReset();
+    }
 }
 
 _calculateResult(){
@@ -92,7 +95,7 @@ _showOutput(){
     const html=`<h3 class="score"><span> As per FLAMES : ${this.result} </span></br>
                 <span> As per LAKME : ${this.result1} </span></h3>`;
 
-    document.getElementById('result').insertAdjacentHTML("beforeend",html);
+    document.getElementById('result').innerHTML=html;
     
 }
 
