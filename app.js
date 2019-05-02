@@ -47,7 +47,7 @@ _calculateResult(){
         for(let i=0; i<number; i++){
             console.log(cur);
             cur++;
-            if(cur>flames.length-1 ||cur<0){
+            if(cur>flames.length-1){
                 cur=0;
             }  
         }
