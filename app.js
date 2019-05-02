@@ -17,6 +17,7 @@ _getNames(){
 _calculateResult(){
     
     const flames = ["F","L","A","M","E","S"];
+    const lakme = ['L','A','K','M','E'];
 
     // REMOVE COMMON LETTERS FROM THE NAMES
     const resultantString=this.firstName.concat(this.secondName).split('');
@@ -30,34 +31,41 @@ _calculateResult(){
             }
         }
     }
+
     const number= resultantString.length;
     
-    console.log("the number of letters in the name array : "+number);
-    
-    
-    // CREATE THE D-QUEUE TO MINIMIZE FLAMES ARRAY TO SINGLE LETTER 
-    
-    let cur=0;    // global variable to locate the current position of the pointer of the flames array
-    let pass=0;
-    
-    while(flames.length>=2){
-        console.log(`${flames} has ${flames.length} elements`);
-        console.log(`current should range from ${cur} to ${flames.length-1}`);
+    function calculateD_Queue(array){
         
-        for(let i=0; i<number; i++){
-            console.log(cur);
-            cur++;
-            if(cur>flames.length-1){
+        
+        
+        
+        // CREATE THE D-QUEUE TO MINIMIZE FLAMES ARRAY TO SINGLE LETTER 
+        
+        let cur=0;    // global variable to locate the current position of the pointer of the flames array
+        let pass=0;
+        
+        while(array.length>=2){
+            
+            if(cur<0){
                 cur=0;
-            }  
+                }
+            for(let i=0; i<number; i++){
+                cur++;
+                if(cur>array.length-1){
+                    cur=0;
+                }  
+            }
+           cur--;
+            array.splice(cur,1);
         }
-        console.log("---------------");
-        
-        console.log(`Element removed in  ${++pass} is ${flames[--cur]}. The cur value is ${cur}`);
-        flames.splice(cur,1);
-    }
     
-    console.log(flames);
+    }
+
+    calculateD_Queue(flames);
+    calculateD_Queue(lakme);
+    
+    console.log("Flames: "+flames);
+    console.log("Lakme "+lakme);
 
     // this._showOutput(number);
     this._onReset();
