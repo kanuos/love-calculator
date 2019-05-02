@@ -47,17 +47,8 @@ _calculateResult(){
         for(let i=0; i<number; i++){
             console.log(cur);
             cur++;
-            if(cur>flames.length-1){
+            if(cur>flames.length-1 ||cur<0){
                 cur=0;
-            }
-            else if(cur==flames.length){
-                flames.splice(cur,1);
-                cur=0;
-                pass++;
-                continue;
-            }          
-            else{
-                cur=number-1;
             }  
         }
         console.log("---------------");
