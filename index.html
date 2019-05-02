@@ -11,26 +11,34 @@
     <header>
         <h1 class="main-heading">Love prediction App</h1>
     </header>
+
+    <div id="btn"><span>&ii;</span></div>
     <!-- about section to function as a modal -->
-    <section class="about">
+    <section id="about">
         <p class="paragraph">
             This app predicts the nature of emotion you have with your loved ones. It may be your friend or your companion.
         </p>
         <p class="paragraph">
-            This app works on the school yard FLAME and LAKME algorithms. FLAME and LAKME are acronyms. <br>
-            FLAME stands for "FRIENDS", "LOVE","ATTRACTION","MARRIAGE","ENEMY","SIBLINGS" <br>
+            This app works on the school yard FLAME and LAKME algorithms. FLAME and LAKME are acronyms. <br><br><br>
+            FLAME stands for "FRIENDS", "LOVE","ATTRACTION","MARRIAGE","ENEMY","SIBLINGS" <br><br><br>
             LAKME stands for "LOVE","ATTRACTION","KISS","MARRIAGE","ENEMY"..
         </p>
-        <strong>Enjoy!!!</strong>
+        
+        <a href="#btn" id="return" title="Return to game">Enjoy</a>
     </section>
+    
+    <!-- the form for inputting names -->
     <main>
         <form  id="form">
-            <label>
-                Your Name : <input type="text" id="first" autofocus>
-            </label>
-            <label>
-                The Other Name : <input type="text" id="second">
-            </label>
+            <div class="box">
+                <label for="first"> Your Name</label>
+                <input type="text" id="first" autofocus placeholder="Your name here" aria-placeholder="Your name here" required>
+            </div>
+
+            <div class="box">
+                <label for="second">Friend's Name</label>
+                 <input type="text" id="second" placeholder="Your friend's name" aria-placeholder="Your friend's name" required>
+            </div>
 
             <div class="btn-box">
                 <input type="submit" value="Calcualte">
@@ -39,7 +47,10 @@
         </form>
     </main>
 
-    <div id="result"></div>
+    <!-- output display board -->
+    <div id="result">
+        <h3 class="score">hello</h3>
+    </div>
     
 
     <script src="app.js"></script>
