@@ -63,18 +63,44 @@ _calculateResult(){
 
     calculateD_Queue(flames);
     calculateD_Queue(lakme);
-    
-    console.log("Flames: "+flames);
-    console.log("Lakme "+lakme);
 
-    // this._showOutput(number);
+    let result,result1;
+    
+    switch(flames[0]){
+        case "F": this.result= "FRIENDS";break;
+        case "L": this.result= "LOVE";break;
+        case "A": this.result= "ADMIRE";break;
+        case "M": this.result= "MARRY";break;
+        case "E": this.result= "ENEMY";break;
+        case "S": this.result= "SIBLINGS";break;
+    };
+    switch(lakme[0]){
+        case "F": this.result1= "FRIENDS";break;
+        case "L": this.result1= "LOVE";break;
+        case "A": this.result1= "ADMIRE";break;
+        case "M": this.result1= "MARRY";break;
+        case "E": this.result1= "ENEMY";break;
+        case "S": this.result1= "SIBLINGS";break;
+    };
+    
+    this._showOutput();
     this._onReset();
 }
 
-_showOutput(str1){
+_showOutput(){
 
-    console.log(str1);
+    const html=`<h3 class="score"><span> As per FLAMES : ${this.result} </span></br>
+                <span> As per LAKME : ${this.result1} </span></h3>`;
+
+    document.getElementById('result').insertAdjacentHTML("beforeend",html);
     
+}
+
+showInfo(){
+    document.getElementById('about').classList.remove('invisible');
+}
+hideInfo(){
+    document.getElementById('about').classList.add('invisible');
 }
 
 _onSubmit(){
@@ -106,3 +132,14 @@ init(){
 const Obj = new LoveCalculator();
 
 Obj.init();
+
+
+
+// ******************************* When the info button is clicked *************************************
+
+document.getElementById('btn').addEventListener('click',Obj.showInfo);
+
+document.getElementById('return').addEventListener('click',(e)=>{
+    Obj.hideInfo();
+    e.preventDefault();
+});
