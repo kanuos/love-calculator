@@ -67,7 +67,7 @@ _calculateResult(){
     calculateD_Queue(flames);
     calculateD_Queue(lakme);
 
-    let result,result1;
+    // let result,result1;
     
     switch(flames[0]){
         case "F": this.result= "FRIENDS";break;
@@ -92,7 +92,7 @@ _calculateResult(){
 
 _showOutput(){
 
-    const html=`<h3 class="score"><span> As per FLAMES : ${this.result} </span></br>
+    const html=`<h2 class="score">${this.firstName} and ${this.secondName}'s future :-</h2></br><h3 class="score"><span> As per FLAMES : ${this.result} </span></br>
                 <span> As per LAKME : ${this.result1} </span></h3>`;
 
     document.getElementById('result').innerHTML=html;
