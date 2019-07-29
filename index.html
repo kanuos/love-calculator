@@ -1,59 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
     <title>Love Calculator</title>
 </head>
+
 <body>
-    <header>
-        <h1 class="main-heading">Love prediction App</h1>
+    <nav>
+        <div class="logo">
+            <img src="icon.png" alt="site logo">
+            <span>
+                love Calculator
+            </span>
+        </div>
+        <div id="btn"><span>rules</span></div>
+    </nav>
+    <!-- end of navigation  -->
+    <header id="header">
+        <div class="left">
+            <div class="container">
+                <h2 class="main-heading left-1">
+                    <span class="single-line">Predict your love life</span>
+                    <span class="single-line"> 💘 numerology</span>
+                    <span class="single-line"> 💘 horoscope</span>
+                    <span class="single-line"> 💘 holistic approach</span>
+                </h2>
+                <h1 class="main-heading left-2">
+                    <span class="single-line">
+                        Love unites us... 
+                    </span>
+                    <span id="love"></span>
+                </h1>
+                <a href="#main" class="btn btn-header">Predict &nbsp;<span class="animate">&darr;</span> </a>
+            </div>
+        </div>
+        <div class="right">
+            &nbsp;
+        </div>
+        <div class="content">
+            <blockquote>“Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.”
+                <cite>- Lao Tzu</cite>
+            </blockquote>
+        </div>
     </header>
 
-    <div id="btn"><span>&ii;</span></div>
-    <!-- about section to function as a modal -->
-    <section id="about">
-        <p class="paragraph">
-            This app predicts the nature of emotion you have with your loved ones. It may be your friend or your companion.
-        </p>
-        <p class="paragraph">
-            This app works on the school yard FLAME and LAKME algorithms. FLAME and LAKME are acronyms. <br><br><br>
-            FLAME stands for "FRIENDS", "LOVE","ATTRACTION","MARRIAGE","ENEMY","SIBLINGS" <br><br><br>
-            LAKME stands for "LOVE","ATTRACTION","KISS","MARRIAGE","ENEMY"..
-        </p>
-        
-        <a href="" id="return" title="Return to game">Enjoy</a>
-    </section>
-    
     <!-- the form for inputting names -->
-    <main>
-        <form  id="form" autocomplete="off">
-            <div class="box">
-                <label for="first"> Your Name</label>
-                <input type="text" id="first" autofocus placeholder="Your name here" aria-placeholder="Your name here" required>
-            </div>
-
-            <div class="box">
-                <label for="second">Friend's Name</label>
-                 <input type="text" id="second" placeholder="Your friend's name" aria-placeholder="Your friend's name" required>
-            </div>
-
-            <div class="btn-box">
-                <input type="submit" value="Calcualte">
-                <input type="reset" value="Reset fields" id="reset">
+    <main id="main">
+        <form id="form-1" autocomplete="off">
+            <div class="segment">
+                <h2 class="form-heading">Step 1 of 2</h2>
+                <h3 class="form-heading">Enter your details</h3>
+                <div class="box">
+                    <label for="first">Name</label>
+                    <input type="text" id="first" autofocus placeholder="Name" aria-placeholder="Name" required>
+                </div>
+                <div class="box">
+                    <label for="first-date"> Date of birth</label>
+                    <input type="date" id="first-date" placeholder="date of birth" aria-placeholder="Date of Birth" required>
+                </div>
+                <button class="btn btn-form" id='next' type="submit">Next</button>
             </div>
         </form>
+
+        <form id="form-2" autocomplete="off">
+            <div class="segment">
+                <h2 class="form-heading">Step 2 of 2</h2>
+
+                <h3 class="form-heading"> Enter His/Her details </h3>
+
+                <div class="box">
+                    <label for="second"> Name</label>
+                    <input type="text" id="second" placeholder="Name" aria-placeholder="Name" required autofocus>
+                </div>
+                <div class="box">
+                    <label for="second-date">Date of birth</label>
+                    <input type="date" id="second-date" autofocus placeholder="Date of birth" aria-placeholder="Date of birth" required>
+                </div>
+                <button class="btn btn-form" id="submit" type="submit">Submit</button>
+            </div>
+        </form>
+        <video autoplay loop muted>
+            <source src="main.mp4" type="video/mp4"> 
+        </video>
     </main>
 
     <!-- output display board -->
-    <div class="output">
-        <h2 class="score">&#10084;&#10084;&#10084; Let's begin predicting &#10084;&#10084;&#10084;</h2>    
-        <h3 id="result"></h3>
-    </div>
-    
+    <section class="output">
+        <h2 class="form-heading output__heading">Here's your dossier</h2>
+        <div id="result">
+            <div class="output__person">
+                <h2 class="output__heading--sub">Name : <span id="firstName"></span></h2>
+                <h2 class="output__heading--sub">Date of Birth : <span id="firstDate"></span></h2>
+                <h2 class="output__heading--sub">Zodiac sign : <span id="firstSign"></span> </h2>
 
+                <div class="output__container">
+                    <ul class="output__list">
+                        <li class="output__list-item">Primary Number : <span id="firstPrimary"></span></li>
+                        <li class="output__list-item">Secondary Number :<span id="firstSecondary"></span></li>
+                        <li class="output__list-item">Destiny Number :<span id="firstDestiny"></span></li>
+                    </ul>
+                    <p class="output__paragraph" id="firstMessage"></p>
+                    </p>
+                </div>
+            </div>
+            <div class="output__person">
+                <h2 class="output__heading--sub">Name : <span id="secondName"></span></h2>
+                <h2 class="output__heading--sub">Date of Birth : <span id="secondDate"></span></h2>
+                <h2 class="output__heading--sub">Zodiac sign : <span id="secondSign"></span> </h2>
+
+                <div class="output__container">
+                    <ul class="output__list">
+                        <li class="output__list-item">Primary Number : <span id="secondPrimary"></span></li>
+                        <li class="output__list-item">Secondary Number :<span id="secondSecondary"></span></li>
+                        <li class="output__list-item">Destiny Number :<span id="secondDestiny"></span></li>
+                    </ul>
+                    <p class="output__paragraph" id="secondMessage"></p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--End of the result div-->
+        <h2 class="form-heading output__heading output__result">
+            Here's your result
+            <ul class="output__list output__result--list">
+                <li class="output__list-item">Algorithm A predicts : <span id="flames"></span></li>
+                <li class="output__list-item">Algorithm B predicts : <span id="lakme"></span></li>
+                <li class="output__list-item">Zodiac compatibility :
+                    <span id="compatibility"></span>
+                </li>
+            </ul>
+        </h2>
+
+
+        <a onclick="starting()">Top <span class="animate">&uarr;</span></a>
+    </section>
+
+
+    <!-- about section to function as a modal -->
+    <section id="about">
+        <button id="cross">🔙</button>
+        <h1 class="form-heading">
+            Love Calculator App
+        </h1>
+        <p class="about__paragraph">
+            Predict your loved life using Cheiro Numerology, Zodiac predictions using your date of birth and using multiple state of the art algorithms. Enter your and your loved one's detals and let the LOVE CALCULATOR APP predict your future.
+            <br> This app doesn't guarantee any results. It just applies the algorithmsm and calculates your love-quotient.
+            <br> “This app assumes no responsibility or liability for any errors or omissions in the content of this site. The information contained in this site is provided on an “as is” basis with no guarantees of completeness, accuracy, usefulness
+            or timeliness…”
+        </p>
+        <h2 class="form-heading">
+            Enjoy
+        </h2>
+    </section>
+
+    <div id="modal">
+        <div id="modal__box">
+            <h2 class="form-heading">
+                Calculating results.. please wait
+            </h2>
+            <span class="loader">💕</span>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by <a href="https://github.com/" target="_blank">Sounak</a> &copy;2019</p>
+    </footer>
+    <script type="text/javascript">
+        const typed = new Typed("#love", {
+            strings: ['αγάπη', 'عشق', 'Láska', 'Amar', 'प्यार', 'любовь', 'Liefde', 'Amore', 'প্রেম', 'Love'],
+            typeSpeed: 200,
+            backSpeed: 80,
+            backDelay: 30,
+            loop: true,
+            onStringTyped: function() {
+                document.querySelectorAll(".typed-cursor")[0].style.display = "none";
+            }
+        });
+    </script>
     <script src="app.js"></script>
 </body>
+
 </html>
