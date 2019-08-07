@@ -595,8 +595,7 @@
     .output {
         text-align: center;
         height: 97vh;
-        /* display: none; */
-        display: grid;
+        display: none;
         grid-template-rows: .75fr 3fr 1fr;
         grid-row-gap: 1rem;
         background-image: linear-gradient( to right bottom, var(--light), var(--darker), var(--light));
@@ -737,7 +736,6 @@
     
     @media (max-width:1000px) {
         .output {
-            display: grid;
             height: auto;
             grid-template-rows: 5rem 1fr 15rem;
         }
@@ -793,7 +791,7 @@
     /* footer section starts here */
     
     footer {
-        position: fixed;
+        position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
