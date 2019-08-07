@@ -1,21 +1,14 @@
 Date : 01-May-2019
 Author: Sounak Mukherjee
 
-This app is a recreation of the FLAMES game. It inputs two names and calculates the possibility of their fate together.
-
-F= Friends
-L= Love
-A= Admiration
-M= Marriage
-E= Enemity
-S= Sex 
-
-------------------------------------------------------------------------------------------------------------------------------
-
-Progress : basic app layout completed//
+This app calculates the love equation between partners or potential crushes.
+D-queue or circular queue has been implemented using vanilla JS. 
 
 
-left : local storage incorporation for high scores and stuff
+Two algorithms have been implemented alongside Cheiro Numerology calculations and Zodiac calculations.
 
+This app doesn't guarantee any predictions. Take it as a fun app without getting too serious.
 
+The design, pattern and algorithm have been designed and implemented by Sounak(me) on 1st May,2019.
 
+Enjoy
