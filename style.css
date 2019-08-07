@@ -419,8 +419,26 @@
             position: absolute;
             width: 75%;
             top: 6rem;
-            left: 14.5rem;
+            left: 13.5rem;
         }
+    }
+
+    @media (max-width:416px){
+        html{
+            font-size: 55%;
+        }
+        blockquote{
+            font-size: 1.75rem;
+        }
+    }
+    @media (max-width:365px){
+        html{
+            font-size: 55%;
+        }
+        blockquote{
+            font-size: 1.5rem;
+        }
+   
     }
     /* end of header section */
     /* main section starts here */
